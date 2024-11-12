@@ -8,19 +8,21 @@ if (-not (Test-Path -Path $diretorio)) {
 }
 
 if (Test-Path $caminhoArquivo) {
-    Start-Process $caminhoArquivo
-} else {  
-    try {
-        Invoke-WebRequest -Uri $url -OutFile $caminhoArquivo
+    Write-Host "Arquivo encontrado. Removendo o arquivo antigo..."
+    Remove-Item $caminhoArquivo -Force
+}
 
-        if (Test-Path $caminhoArquivo) {
-            Write-Host "Completed 100% Bypass Open"
-            Start-Process $caminhoArquivo
-        } else {
-            Write-Host "Falha no Bypass. Chame o Dev."
-        }
+try {
+    Write-Host "Baixando o novo arquivo..."
+    Invoke-WebRequest -Uri $url -OutFile $caminhoArquivo
+
+    if (Test-Path $caminhoArquivo) {
+        Write-Host "Download concluído com sucesso. Executando o arquivo..."
+        Start-Process $caminhoArquivo
+    } else {
+        Write-Host "Falha no Bypass. Chame o Dev."
     }
-    catch {
-        Write-Host "Falha no Bypass. Chame o Dev. Curl"
-    }
+}
+catch {
+    Write-Host "Falha no Bypass. Chame o Dev. e reporte o erro: $_"
 }
