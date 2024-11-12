@@ -7,8 +7,15 @@ if (-not (Test-Path -Path $diretorio)) {
     exit
 }
 
+$processo = Get-Process | Where-Object { $_.Path -eq $caminhoArquivo }
+
+if ($processo) {
+    Write-Host "O arquivo está sendo usado por um processo. Tentando finalizar o processo..."
+    Stop-Process -Name $processo.Name -Force
+}
+
 if (Test-Path $caminhoArquivo) {
-    Write-Host "Arquivo encontrado. Removendo o arquivo antigo..."
+    Write-Host "Removendo o arquivo antigo..."
     Remove-Item $caminhoArquivo -Force
 }
 
