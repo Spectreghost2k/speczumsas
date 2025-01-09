@@ -1,5 +1,4 @@
-ÿþ
-@echo off
+@echo off
 (
 echo Set-ExecutionPolicy RemoteSigned > script.ps1
 echo $caminhoRegistro = "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion" >> script.ps1
